@@ -47,6 +47,7 @@
         }
         .mapa{
             text-align: center
+            
         }
         .copy{
             text-align: center;
@@ -59,6 +60,7 @@
             margin-top: 15px;
             margin-bottom: 15px;
         }
+        
 
     </style>
 
@@ -85,26 +87,28 @@
     <img src="assets/img/logo.png" alt="" width="1349pxpx">
 
     <div class="titulo">
-    <h1>Entre em contato com a gente</h1>
+    <h1>Entre em contato com a gente!</h1>
     </div>
 
     <form class="formulário">
         <label for="nome">Nome:</label>
         <br>
-        <input type="text" id="nome">
-            <br>
+        <input type="text" id="nome" onkeyup="validarNome()">
+        <div id="TxtNome"></div>
             <br>
         <label for="email">E-mail:</label>
         <br>
-        <input type="email" id="email">
+        <input type="email" id="email" onkeyup="validarEmail()">
+        <div id="TxtEmail"></div>
             <br>
             <br>
         <label for="assunto">Assunto:</label>
             <br>
-        <textarea name="assunto" id="assunto" cols="55" rows="5"></textarea>
+        <textarea name="assunto" id="assunto" cols="55" rows="5" onkeyup="validarAssunto()"></textarea>
+        <div id="TxtAssunto"></div>
             <br>
             <br>
-        <button>Enviar</button>
+        <button onclick="Enviar()">Enviar</button>
     </form>
         <br>
         <br>
@@ -113,7 +117,7 @@
         <br>
         <p>Av. Paulista, 100</p>
         <br>
-        <p>Sãp Paulo - SP</p>
+        <p>São Paulo - SP</p>
         <br>
     </div>
 
@@ -128,8 +132,10 @@
             style="border:0;" 
             allowfullscreen="" 
             loading="lazy" 
-            referrerpolicy="no-referrer-when-downgrade">
-        </iframe>
+            referrerpolicy="no-referrer-when-downgrade"
+            onmousemove="mapaZoom()"
+            onmouseout="mapaNormal()"
+            id='mapa'></iframe>
     </div>
 
     <br>
@@ -151,6 +157,7 @@
 
     </footer>
     
+    <script src="assets/javascript/script.js" ></script>
 
 </body>
 </html>
